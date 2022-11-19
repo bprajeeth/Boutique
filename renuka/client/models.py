@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class BookUser(models.Model):
+class client(models.Model):
     name = models.CharField(max_length=100, blank=False)
     mobile = models.CharField(max_length=100, blank=False)
     dress_type = models.CharField(max_length=20, blank=False) #dress type

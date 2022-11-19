@@ -1,0 +1,242 @@
+{% extends 'base.html' %}
+{% block body %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'form.css' %}" media="screen">
+<!-- <!DOCTYPE html>
+{% load static %}
+<html style="font-size: 18px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>form</title>
+    <link rel="stylesheet" href="{% static 'nicepage.css' %}" media="screen">
+<link rel="stylesheet" href="{% static 'form.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static 'jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'nicepage.js' %}" defer=""></script>
+    <meta name="generator" content="Nicepage 4.18.5, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/logo.png"
+}</script>
+    <meta name="theme-color" content="#e82d2d">
+    <meta property="og:title" content="form">
+    <meta property="og:type" content="website">
+  </head>
+
+  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-b2fb"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="https://nicepage.com" class="u-align-left u-image u-logo u-image-1" data-image-width="600" data-image-height="647">
+          <img src="{% static 'images/logo.png' %}" class="u-logo-image u-logo-image-1">
+        </a>
+        <p class="u-align-left u-custom-font u-font-montserrat u-text u-text-default u-text-1">Renuka Tailors</p>
+        <nav class="u-align-right u-menu u-menu-one-level u-offcanvas u-menu-1" data-responsive-from="XL">
+          <div class="menu-collapse" style="font-size: 0.888889rem; letter-spacing: 0px; text-transform: uppercase; font-weight: 500;">
+            <a class="u-button-style u-custom-active-color u-custom-border u-custom-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#" style="padding: 4px 0px; font-size: calc(1em + 8px);">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-active-palette-1-base u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white" href="Home.html" style="padding: 10px 20px;">Home</a>
+</li><li class="u-nav-item"><a class="u-active-palette-1-base u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white" href="Patterns.html" style="padding: 10px 20px;">Patterns</a>
+</li><li class="u-nav-item"><a class="u-active-palette-1-base u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white" href="Accessories.html" style="padding: 10px 20px;">Accessories</a>
+</li><li class="u-nav-item"><a class="u-active-palette-1-base u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white" href="Jewellery.html" style="padding: 10px 20px;">Jewellery</a>
+</li><li class="u-nav-item"><a class="u-active-palette-1-base u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white" href="form.html" style="padding: 10px 20px;">form</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Patterns.html">Patterns</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Accessories.html">Accessories</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Jewellery.html">Jewellery</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="form.html">form</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header> -->
+
+
+    <section class="u-clearfix u-palette-4-light-3 u-section-1" id="carousel_78b6">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-align-center u-container-style u-expanded-width u-group u-palette-5-light-2 u-radius-20 u-shape-round u-group-1">
+          <div class="u-container-layout u-valign-middle-xs u-container-layout-1">
+            <h6 class="u-text u-text-1"> Fill in your details !​​!</h6>
+            <div class="u-expanded-width u-form u-form-1">
+              <form method="post" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form1" style="padding: 10px;">
+                {% csrf_token %}
+                <div class="u-form-group u-form-name">
+                  <label for="name-e0dd" class="u-label">Name</label>
+                  <input type="text" placeholder="Enter your Name" id="name-e0dd" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-14 u-white" required="">
+                </div>
+                <div class="u-form-email u-form-group">
+                  <label for="mob" class="u-label">Mobile</label>
+                  <input type="tel" placeholder="Enter mobile number" id="mob" name="mobile" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-14 u-white" required="">
+                </div>
+                <div class="u-form-group u-form-message">
+                  <label for="message-e0dd" class="u-label">Dress Type</label>
+                  <input type="text" placeholder="Enter your message" rows="1" cols="50" id="message-e0dd" name="dress" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-14 u-white" required="">
+                </div>
+                <div class="u-form-group u-form-select u-form-group-4">
+                  <label for="select-a576" class="u-label">Gender</label>
+                  <div class="u-form-select-wrapper">
+                    <select id="select-a576" name="select" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-14 u-white">
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                  </div>
+                <!-- </div>
+                <div class="u-align-center u-form-group u-form-submit">
+                  <a href="#" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-1 u-hover-black u-radius-13 u-text-white u-btn-1">Submit</a>
+                  <input type="submit" value="submit" class="u-form-control-hidden">
+                </div> -->
+                <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+                <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+                <input type="hidden" value="" name="recaptchaResponse">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-palette-4-light-3 u-section-2" id="carousel_279b">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-xl u-sheet-1">
+        <div class="u-align-center u-container-style u-expanded-width u-group u-palette-5-light-2 u-radius-20 u-shape-round u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <h6 class="u-text u-text-1"> Enter measurements</h6>
+            <div class="u-align-center u-form u-form-1">
+              <form  method="post" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" source="email" name="form2" style="padding: 0px;">
+                {% csrf_token %}
+                <div class="u-form-group u-form-name">
+                  <label for="name-4c18" class="u-label u-label-1">Shoulder to Shoulder (cms)</label>
+                  <input type="number" placeholder="Enter here" id="name-4c18" name="shoulder" class="u-input u-input-rectangle u-radius-10 u-white u-input-1" required="">
+                </div>
+                <div class="u-form-email u-form-group">
+                  <label for="email-4c18" class="u-label u-label-2">Above Bust (cms)</label>
+                  <input type="number" placeholder="Enter here" id="email-4c18" name="bust1" class="u-input u-input-rectangle u-radius-10 u-white u-input-2" required="">
+                </div>
+                <div class="u-form-group u-form-message">
+                  <label for="message-4c18" class="u-label u-label-3">top_bust (cms)</label>
+                  <input type="number" placeholder="Enter here" rows="1" cols="50" id="message-4c18" name="bust2" class="u-input u-input-rectangle u-radius-10 u-white u-input-3" required=""></textarea>
+                </div>
+                <div class="u-form-group u-form-name u-form-group-4">
+                  <label for="name-89df" class="u-label u-label-4">Below Bust (cms)</label>
+                  <input type="number" placeholder="Enter here" id="name-89df" name="bust3" class="u-input u-input-rectangle u-radius-10 u-white u-input-4" required="">
+                </div>
+                <div class="u-form-group u-form-name u-form-group-5">
+                  <label for="name-cdba" class="u-label u-label-5">Blouse length (cms)</label>
+                  <input type="number" placeholder="Enter here" id="name-cdba" name="blouse" class="u-input u-input-rectangle u-radius-10 u-white u-input-5" required="">
+                </div>
+                <div class="u-form-group u-form-name u-form-group-6">
+                  <label for="name-a2e0" class="u-label u-label-6">Arm Hole (cms)</label>
+                  <input type="number" placeholder="Enter here" id="name-a2e0" name="arm1" class="u-input u-input-rectangle u-radius-10 u-white u-input-6" required="">
+                </div>
+                <div class="u-form-group u-form-name u-form-group-7">
+                  <label for="name-b6df" class="u-label u-label-7">Arm Width (cms)</label>
+                  <input type="number" placeholder="Enter here" id="name-b6df" name="arm2" class="u-input u-input-rectangle u-radius-10 u-white u-input-7" required="">
+                </div>
+                <div class="u-form-group u-form-name u-form-group-8">
+                  <label for="name-2692" class="u-label u-label-8">Arm Length (cms)</label>
+                  <input type="number" placeholder="Enter here" id="name-2692" name="arm3" class="u-input u-input-rectangle u-radius-10 u-white u-input-8" required="">
+                </div>
+                <div class="u-form-group u-form-name u-form-group-9">
+                  <label for="name-6e15" class="u-label u-label-9">Waist (cms) </label>
+                  <input type="number" placeholder="Enter here" id="name-6e15" name="waist" class="u-input u-input-rectangle u-radius-10 u-white u-input-9" required="">
+                </div>
+                <div class="u-form-group u-form-name u-form-group-10">
+                  <label for="name-f0bd" class="u-label u-label-10">Saree Length (cms)</label>
+                  <input type="number" placeholder="Enter here" id="name-f0bd" name="saree1" class="u-input u-input-rectangle u-radius-10 u-white u-input-10" required="">
+                </div>
+                <div class="u-form-group u-form-name u-form-group-11">
+                  <label for="name-fff5" class="u-label u-label-11">Saree Waist (cms)</label>
+                  <input type="number" placeholder="Enter here" id="name-fff5" name="saree2" class="u-input u-input-rectangle u-radius-10 u-white u-input-11" required="">
+                </div>
+                <div class="u-form-email u-form-group u-form-group-12">
+                  <label for="email-f958" class="u-label u-label-12">Knee to Knee (cms)</label>
+                  <input type="numberl" placeholder="Enter here" id="email-f958" name="knee" class="u-input u-input-rectangle u-radius-10 u-white u-input-12" required="">
+                </div>
+                <div class="u-form-group u-form-name u-form-group-13">
+                  <label for="name-4d04" class="u-label u-label-13">Thavani (cms)</label>
+                  <input type="number" placeholder="Enter here" id="name-4d04" name="thavani" class="u-input u-input-rectangle u-radius-10 u-white u-input-13" required="">
+                </div>
+                <div class="u-form-group u-form-name u-form-group-14">
+                  <label for="name-c9e4" class="u-label u-label-14">Pyjama Waist (cms)</label>
+                  <input type="number" placeholder="Enter here" id="name-c9e4" name="pyjama1" class="u-input u-input-rectangle u-radius-10 u-white u-input-14" required="">
+                </div>
+                <div class="u-form-group u-form-name u-form-group-15">
+                  <label for="name-7473" class="u-label u-label-15">Pyjama Hip (cms)</label>
+                  <input type="number" placeholder="Enter here" id="name-7473" name="pyjama2" class="u-input u-input-rectangle u-radius-10 u-white u-input-15" required="">
+                </div>
+                <div class="u-form-group u-form-name u-form-group-16">
+                  <label for="name-4b90" class="u-label u-label-16">Pyjama Length (cms)</label>
+                  <input type="number" placeholder="Enter here" id="name-4b90" name="pyjama3" class="u-input u-input-rectangle u-radius-10 u-white u-input-16" required="">
+                </div>
+                <div class="u-form-group u-form-name u-form-group-17">
+                  <label for="name-d767" class="u-label u-label-17">Pyjama Ankle (cms)</label>
+                  <input type="number" placeholder="Enter here" id="name-d767" name="pyjama4" class="u-input u-input-rectangle u-radius-10 u-white u-input-17" required="">
+                </div>
+                <!-- <div class="u-align-center u-form-group u-form-submit">
+                  <a href="#" class="u-active-white u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-1 u-hover-black u-radius-24 u-btn-1">Submit</a>
+                  <input type="submit" value="post" class="u-form-control-hidden">
+                </div> -->
+                <!-- <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+                <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div> -->
+                <!-- <input type="hidden" value="" name="recaptchaResponse"> -->
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="u-align-center u-form-group u-form-submit">
+        <a class="u-active-white u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-1 u-hover-black u-radius-24 u-btn-1">Submit</a>
+        <!-- <input type="submit" value="submit" class="u-form-control-hidden"> -->
+        <input id="submit_button" type="submit" class="u-form-control-hidden" onclick="submitforms()" />
+      </div>      
+    </section>
+    <script>
+      submitforms=function(){
+      document.forms["form1"].submit();
+      document.forms["form2"].submit();
+      window.alert("submitted !");
+      }
+    </script>
+
+{% endblock body %}    
+
+    <!-- <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-99fd"><div class="u-align-left u-clearfix u-sheet u-sheet-1">
+        <a href="https://nicepage.com/website-design" class="u-image u-logo u-image-1" data-image-width="1024" data-image-height="1024">
+          <img src="{% static 'images/mobile.png' %}" class="u-logo-image u-logo-image-1">
+        </a>
+        <img class="u-image u-image-contain u-image-default u-image-2" src="{% static 'images/whatsapp.png' %}" alt="" data-image-width="600" data-image-height="383">
+        <p class="u-custom-font u-font-montserrat u-text u-text-default u-text-1">© 2022 RENUKA TAILORS<span style="font-weight: 700;"></span>
+        </p>
+      </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="https://nicepage.com/html-templates" target="_blank">
+        <span>HTML Template</span>
+      </a>
+      <p class="u-text">
+        <span>created with</span>
+      </p>
+      <a class="u-link" href="" target="_blank">
+        <span>Offline Website Builder</span>
+      </a>. 
+    </section>
+  
+</body></html> -->
