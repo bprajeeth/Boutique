@@ -71,7 +71,7 @@
       </div></header> -->
 
 
-    <section class="u-clearfix u-palette-4-light-3 u-section-1" id="carousel_78b6">
+    <!-- <section class="u-clearfix u-palette-4-light-3 u-section-1" id="carousel_78b6">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-align-center u-container-style u-expanded-width u-group u-palette-5-light-2 u-radius-20 u-shape-round u-group-1">
           <div class="u-container-layout u-valign-middle-xs u-container-layout-1">
@@ -101,12 +101,12 @@
                     </select>
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
                   </div>
-                <!-- </div>
+                 </div>
                 <div class="u-align-center u-form-group u-form-submit">
                   <a href="#" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-1 u-hover-black u-radius-13 u-text-white u-btn-1">Submit</a>
                   <input type="submit" value="submit" class="u-form-control-hidden">
                 </div> -->
-                <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+                <!-- <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
                 <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
                 <input type="hidden" value="" name="recaptchaResponse">
               </form>
@@ -114,15 +114,64 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
+
+
     <section class="u-clearfix u-palette-4-light-3 u-section-2" id="carousel_279b">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-xl u-sheet-1">
         <div class="u-align-center u-container-style u-expanded-width u-group u-palette-5-light-2 u-radius-20 u-shape-round u-group-1">
           <div class="u-container-layout u-container-layout-1">
-            <h6 class="u-text u-text-1"> Enter measurements</h6>
+            <!-- <h6 class="u-text u-text-1"> Enter measurements</h6> -->
             <div class="u-align-center u-form u-form-1">
-              <form  method="post" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" source="email" name="form2" style="padding: 0px;">
+
+              <form  method="post" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" source="email" name="form1" style="padding: 0px;">
                 {% csrf_token %}
+
+                <!-- <div class="u-clearfix u-palette-4-light-3 u-section-1" id="carousel_78b6">
+                  <div class="u-clearfix u-sheet u-sheet-1">
+                    <div class="u-align-center u-container-style u-expanded-width u-group u-palette-5-light-2 u-radius-20 u-shape-round u-group-1"> -->
+                      <div class="u-container-layout u-valign-middle-xs u-container-layout-1" style="background-color: rgb(181, 206, 241); border-radius: 15px; padding-bottom: 3vw;">
+                        <h6 class="u-text u-text-1"> Fill in your details !​​!</h6>
+                        <div class="u-expanded-width u-form u-form-1">
+                          <div class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" style="padding: 10px;">
+                            <div class="u-form-group u-form-name">
+                              <label for="name-e0dd" class="u-label">Name</label>
+                              <input type="text" placeholder="Enter your Name" id="name-e0dd" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-14 u-white" required="">
+                            </div>
+                            <div class="u-form-email u-form-group">
+                              <label for="mob" class="u-label">Mobile</label>
+                              <input type="tel" placeholder="Enter mobile number" id="mob" name="mobile" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-14 u-white" required="">
+                            </div>
+                            <div class="u-form-group u-form-message">
+                              <label for="message-e0dd" class="u-label">Dress Type</label>
+                              <input type="text" placeholder="Enter your message" rows="1" cols="50" id="message-e0dd" name="dress" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-14 u-white" required="">
+                            </div>
+                            <div class="u-form-group u-form-select u-form-group-4">
+                              <label for="select-a576" class="u-label">Gender</label>
+                              <div class="u-form-select-wrapper">
+                                <select id="select-a576" name="select" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-14 u-white">
+                                  <option value="Male">Male</option>
+                                  <option value="Female">Female</option>
+                                  <option value="Other">Other</option>
+                                </select>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                              </div>
+                            <!-- </div>
+                            <div class="u-align-center u-form-group u-form-submit">
+                              <a href="#" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-1 u-hover-black u-radius-13 u-text-white u-btn-1">Submit</a>
+                              <input type="submit" value="submit" class="u-form-control-hidden">
+                            </div> -->
+                            <!-- <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+                            <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+                            <input type="hidden" value="" name="recaptchaResponse"> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <!-- </div>
+                  </div> -->
+                
+                <h6 class="u-text u-text-1" style="padding: 3vw 0vw 1vw 0vw;"> Enter measurements</h6>
                 <div class="u-form-group u-form-name">
                   <label for="name-4c18" class="u-label u-label-1">Shoulder to Shoulder (cms)</label>
                   <input type="number" placeholder="Enter here" id="name-4c18" name="shoulder" class="u-input u-input-rectangle u-radius-10 u-white u-input-1" required="">
@@ -198,24 +247,32 @@
                 <!-- <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
                 <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div> -->
                 <!-- <input type="hidden" value="" name="recaptchaResponse"> -->
-              </form>
+              <!-- </form> -->
             </div>
           </div>
         </div>
       </div>
+  
       <div class="u-align-center u-form-group u-form-submit">
-        <a class="u-active-white u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-1 u-hover-black u-radius-24 u-btn-1">Submit</a>
+        <a onclick="submitforms()" class="u-active-white u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-1 u-hover-black u-radius-24 u-btn-1">Submit</a>
         <!-- <input type="submit" value="submit" class="u-form-control-hidden"> -->
-        <input id="submit_button" type="submit" class="u-form-control-hidden" onclick="submitforms()" />
-      </div>      
+        <!-- <input id="submit_button" type="submit" class="u-form-control-hidden" onclick="submitforms()" /> -->
+      </div>       
     </section>
-    <script>
+  </form>
+  <script>
+    submitforms=function(){
+    document.forms["form1"].submit();
+    window.alert("submitted !");
+    }
+  </script>    
+    <!-- <script>
       submitforms=function(){
       document.forms["form1"].submit();
       document.forms["form2"].submit();
       window.alert("submitted !");
       }
-    </script>
+    </script> -->
 
 {% endblock body %}    
 
