@@ -3,10 +3,14 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from client.models import client
 from openpyxl import Workbook
-from win32com import client
-
-# Create your views here.
-
+# from win32com import client as x
+import os
+import pywhatkit
+# Create your 
+# views here.
+# import  jpype     
+# import  asposecells
+# from asposecells.api import Workbook
 
 def home_view(request):
     return render(request, "Home.html")
@@ -85,7 +89,7 @@ def form_view(request):
         ws.cell(row=24, column=1).value = "pyjama_ankle"
         ws.cell(row=24, column=2).value = pyjama4
         wb.save("check.xlsx")
-        excel = client.Dispatch("Excel.Application")
+        
 
         user = client(
             name=username,
@@ -111,12 +115,33 @@ def form_view(request):
         )
         # user = client(shoulder_to_shoulder=shoulder, above_bust=bust1, top_bust=bust2 ,below_bust=bust3 , blouse_length=blouse , arm_hole=arm1, arm_width=arm2,  arm_length=arm3, waist=wst , saree_length=saree1, saree_waist=saree2, knee_to_knee=knee , thavani=thav, pyjama_waist=pyjama1, pyjama_hip=pyjama2, pyjama_length=pyjama3, pyjama_ankle=pyjama4)
         user.save()
-        # Read Excel File
-        sheets = excel.Workbooks.Open("check.xlsx")
-        work_sheets = sheets.Worksheets[0]
+     
+        # jpype.startJVM() 
+        # workbook = Workbook("check.xlsx")
+        # workbook.Save("Output.png")
+        # jpype.shutdownJVM()
+        pywhatkit.sendwhatmsg_instantly("+91"+mob,username+" -Form-Sent")
+        # os.remove("check.xlsx")
+        # # Read Excel File
+        # sheets = excel.Workbooks.Open("check.xlsx")
+        # work_sheets = sheets.Worksheets[0]
+        # # Convert into PDF File
+        # work_sheets.ExportAsFixedFormat(0, "checkpdf.pdf")
 
-        # Convert into PDF File
-        work_sheets.ExportAsFixedFormat(0, "checkpdf.pdf")
+        # workbook = Workbook("check.xlsx")
+        # Convert Excel to PDF
+        #workbook.save("xlsx-to-pdf.pdf", SaveFormat.PDF)
+                
+        # excel = x.Dispatch("Excel.Application")
+        
+        # # Read Excel File
+        # sheets = excel.Workbooks.Open('check.xlsx')
+        # work_sheets = sheets.Worksheets[0]
+        
+        # # Convert into PDF File
+        # work_sheets.ActiveSheet.ExportAsFixedFormat(0, 'check.pdf')
+        # sheets.Close()        
+        
         return HttpResponse("succesfull")
     else:
         return render(request, "form.html")
