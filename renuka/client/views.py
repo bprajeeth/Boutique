@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
-from client.models import client
+from client.models import *
 from openpyxl import Workbook
 # from win32com import client as x
 import os
@@ -148,13 +148,16 @@ def form_view(request):
 
 
 def costumes_view(request):
-    return render(request, "Patterns.html")
+    pattern=pattern_display.objects.all()
+    return render(request, "Patterns.html", {'costume':pattern} )
     # return HttpResponse("Patterns.html")
 
 
 def ornaments_view(request):
-    return render(request, "Jewellery.html")
+    ornaments=ornaments_display.objects.all()
+    return render(request, "Jewellery.html", {"ornament":ornaments})
 
 
 def accessories_view(request):
-    return render(request, "Accessories.html")
+    accessories=accessories_display.objects.all()
+    return render(request, "Accessories.html",{"accessories":accessories})

@@ -75,7 +75,7 @@
         <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
         <div class="u-expanded-width u-list u-list-1">
           <div class="u-repeater u-repeater-1">
-            <div class="u-container-style u-list-item u-repeater-item">
+            {% comment %} <div class="u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-1">
                 <img src="{% static 'images\accessories\small_flower_set.jpg' %}" alt="" class="u-expanded-width u-image u-image-round u-radius-10 u-image-1" data-image-width="1900" data-image-height="2532">
                 <h5 class="u-align-center u-custom-font u-font-ubuntu u-text u-text-default u-text-2">Flower Set</h5>
@@ -92,13 +92,15 @@
                 <img src="{% static 'images\accessories\small_normal_kunjalam.jpg' %}" alt="" class="u-expanded-width u-image u-image-round u-radius-10 u-image-3">
                 <h5 class="u-align-center u-custom-font u-font-ubuntu u-text u-text-default u-text-4">Normal Kunjalam</h5>
               </div>
-            </div>
+            </div> {% endcomment %}
+            {% for item in accessories %}
             <div class="u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-4">
-                <img src="{% static 'images\accessories\small_salangai_leather.jpg' %}" alt="" class="u-expanded-width u-image u-image-round u-radius-10 u-image-4">
-                <h5 class="u-align-center u-custom-font u-font-ubuntu u-text u-text-default u-text-5">Salangai Leather</h5>
+                <img src="{{ item.accessories_image.url }}" alt="accessories image" class="u-expanded-width u-image u-image-round u-radius-10 u-image-4">
+                <h5 class="u-align-center u-custom-font u-font-ubuntu u-text u-text-default u-text-5">{{ item.accessories_description }}</h5>
               </div>
             </div>
+            {% endfor %}
           </div>
         </div>
       </div>

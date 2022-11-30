@@ -76,7 +76,7 @@
         <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
         <div class="u-expanded-width u-list u-list-1">
           <div class="u-repeater u-repeater-1">
-            <div class="u-container-style u-list-item u-repeater-item">
+            {% comment %} <div class="u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-1">
                 <img src="{% static 'images\jewelleries\small_manga_necklace.jpg' %}" alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="1900" data-image-height="2532">
                 <h5 class="u-custom-font u-font-ubuntu u-text u-text-default u-text-2">Manga Necklace</h5>
@@ -96,14 +96,16 @@
                 <h5 class="u-custom-font u-font-ubuntu u-text u-text-default u-text-6">Necklace-Muthu</h5>
                 <h3 class="u-custom-font u-font-ubuntu u-text u-text-default u-text-7">$ 90</h3>
               </div>
-            </div>
-            <div class="u-container-style u-list-item u-repeater-item">
+            </div> {% endcomment %}
+            {% for item in ornament %}
+            <div class="u-container-style u-list-item u-repeater-item" >
               <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-4">
-                <img src="{% static 'images\jewelleries\small_ragadi.jpg' %}" alt="" class="u-expanded-width u-image u-image-default u-image-4">
-                <h5 class="u-custom-font u-font-ubuntu u-text u-text-default u-text-8">Ragadi</h5>
-                <h3 class="u-custom-font u-font-ubuntu u-text u-text-default u-text-9">$ 250</h3>
+                <img src="{{ item.ornaments_image.url }}" alt="" class="u-expanded-width u-image u-image-round u-radius-10 u-image-4">
+                <h5 class="u-custom-font u-font-ubuntu u-text u-text-default u-text-8">{{ item.ornaments_description }}</h5>
+                {% comment %} <h3 class="u-custom-font u-font-ubuntu u-text u-text-default u-text-9">$ 250</h3> {% endcomment %}
               </div>
             </div>
+            {% endfor %}
           </div>
         </div>
       </div>

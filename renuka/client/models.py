@@ -25,3 +25,15 @@ class client(models.Model):
     pyjama_length = models.CharField(max_length=20, blank=False)
     pyjama_ankle = models.CharField(max_length=20, blank=False)
 
+class pattern_display(models.Model):
+    pattern_image=models.ImageField(upload_to="pattern_images", height_field=None, width_field=None, max_length=None)
+    pattern_description=models.CharField(max_length=100, blank=False)   
+    
+class accessories_display(models.Model):
+    accessories_image=models.ImageField(upload_to="accesories_images", height_field=None, width_field=None, max_length=None)
+    accessories_description=models.CharField(max_length=100, blank=False)
+    
+class ornaments_display(models.Model):
+    ornaments_image=models.ImageField(upload_to="ornaments_images", height_field=None, width_field=None, max_length=None)
+    ornaments_description=models.CharField(max_length=100, blank=False)
+    
