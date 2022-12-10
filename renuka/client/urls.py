@@ -11,6 +11,7 @@ urlpatterns = [
     path('accessories/', accessories_view),
     path('jewellery/', ornaments_view),
     path('form/', form_view),
+    path('get_jewellery/',get_jewellery),
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)  

@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 {% block body %}
-
-
 {% load static %}
+
 <link rel="stylesheet" href="{% static 'Patterns.css' %}" media="screen">
+<style>
+  #parent:hover{
+    transform: scale(1.1);
+    transition: transform 0.1s;
+  }
+  </style>
 <!-- <!DOCTYPE html>
 <html style="font-size: 18px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,14 +79,23 @@
         <div class="u-expanded-width u-list u-list-1">
           <div class="u-repeater u-repeater-1">
             {% for item in costume %}
-            <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-style u-list-item u-repeater-item" id="parent">
               <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-4">
-                  <img src="{{ item.pattern_image.url }}" alt="pattern-images was here" class="u-expanded-width u-image u-image-round u-radius-10 u-image-4">
-                  <h5 class="u-custom-font u-font-ubuntu u-text u-text-default u-text-8" style="">{{ item.pattern_description }}</h5>
+                  <img src="{{ item.pattern_image.url }}" alt="pattern-images was here" class="u-expanded-width u-image u-image-round u-radius-10 u-image-4" id="{{ item.pattern_description }}" onclick="image_id('{{ item.pattern_image.url }}','{{ item.pattern_detail}}',this.id)">
+                  <h5 class="u-custom-font u-font-ubuntu u-text u-text-default u-text-8" >{{ item.pattern_description }}</h5>
                   <h3 class="u-custom-font u-font-ubuntu u-text u-text-default u-text-9">$ 250</h3>
                 </div>
             </div>
             {% endfor %}
+
+            <div id="myModal" class="modal">
+      
+              <div class="modal-content" id="modal-content">
+                <span class="close">&times;</span>
+                <img src="" alt="image was here" class="u-expanded-width u-image u-image-round u-radius-10 u-image-4" id="prod_img">
+                <p id="prod_desc"></p>
+              </div>    
+
             {% comment %} <div class="u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-4">
                 <img src="{% static 'images\patterns\mohiniattam.jpg' %}" alt="" class="u-expanded-width u-image u-image-default u-image-4">
@@ -93,7 +107,77 @@
         </div>
       </div>
     </section>
+
+    <script>
+      // $.ajax({
+      //   type: 'GET',
+      //   url:'/get_jewellery/',
+      //   success: function(response){
+      //     console.log(response)
+      //   },
+      //   error: function(error){
+      //     console.log(error)
+      //   }
     
+      // })
+      // Get the modal
+      var modal = document.getElementById("myModal");
+      var btn;
+      // Get the button that opens the modal
+      // var image;
+      // var description;
+    
+      var p_img=document.getElementById("prod_img");
+      // var p_desc=document.getElementById("prod_desc");
+    
+      function image_id(img,detail,image_id) 
+      {   
+        
+        console.log("inside function");
+        console.log("image = ",img);
+        console.log("detail = ",detail);
+        console.log("id = ",image_id);
+        modal.style.display = "block";
+        p_img.src=img;
+        const parent = document.getElementById("modal-content");
+        const child = document.getElementById("prod_desc");
+        const para = document.createElement("p");
+        const node = document.createTextNode(detail);
+        para.setAttribute('id','prod_desc');
+        para.appendChild(node);
+        parent.replaceChild(para,child);  
+        // btn=document.getElementById(id);
+    
+      }    
+      // console.log(btn);
+      
+    
+      
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+    
+      
+      // When the user clicks the button, open the modal 
+      // btn.onclick = function() {
+      //   modal.style.display = "block";
+      //   p_img.src=image;
+      //   p_desc.append(description);
+    
+    
+      // }
+      
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+      </script>
 {% endblock body %}
     
     <!-- <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-99fd"><div class="u-align-left u-clearfix u-sheet u-sheet-1">

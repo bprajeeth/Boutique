@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 from django.shortcuts import render
+from django.http import JsonResponse
 from client.models import *
 from openpyxl import Workbook
+import json
 # from win32com import client as x
 import os
 import pywhatkit
@@ -161,3 +163,11 @@ def ornaments_view(request):
 def accessories_view(request):
     accessories=accessories_display.objects.all()
     return render(request, "Accessories.html",{"accessories":accessories})
+
+def get_jewellery(request):
+    posts=list(ornaments_display.objects.values())
+    print("posts = ",posts)
+    return JsonResponse({'data':posts},safe=False)
+
+
+
