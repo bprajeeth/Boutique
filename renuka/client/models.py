@@ -5,6 +5,7 @@ from django.db import models
 class client(models.Model):
     name = models.CharField(max_length=100, blank=False)
     mobile = models.CharField(max_length=100, blank=False)
+    email = models.EmailField(max_length=100, blank=False, default="example@gmail.com")
     dress_type = models.CharField(max_length=20, blank=False) #dress type
     #measurements
     shoulder_to_shoulder = models.CharField(max_length=20, blank=False)

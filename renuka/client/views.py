@@ -5,6 +5,9 @@ from django.http import JsonResponse
 from client.models import *
 from openpyxl import Workbook
 import json
+import random
+from django.conf import settings
+from django.core.mail import send_mail
 # from win32com import client as x
 import os
 import pywhatkit
@@ -20,10 +23,23 @@ def home_view(request):
 
 def form_view(request):
     if request.method == "POST":
+
+        x=str(random.randint(2,222222))
         print(request.POST)
+        print("sending email")
+        # user = client(shoulder_to_shoulder=shoulder, above_bust=bust1, top_bust=bust2 ,below_bust=bust3 , blouse_length=blouse , arm_hole=arm1, arm_width=arm2,  arm_length=arm3, waist=wst , saree_length=saree1, saree_waist=saree2, knee_to_knee=knee , thavani=thav, pyjama_waist=pyjama1, pyjama_hip=pyjama2, pyjama_length=pyjama3, pyjama_ankle=pyjama4)
+        send_mail(
+        'OTP Verification from Renuka tailors',
+        'Your OTP is :  '+x,
+        settings.EMAIL_HOST_USER,
+        ['prajeeth2010862@ssn.edu.in'],
+        fail_silently=False,
+        )        
+        
         # VALUE INSIDE BRACKETS ARE ID FROM HTML TAGS
         username = request.POST["name"]
         mob = request.POST["mobile"]
+        mail= request.POST["email"]
         dress = request.POST["dress"]
 
         shoulder = request.POST["shoulder"]
@@ -43,7 +59,7 @@ def form_view(request):
         pyjama2 = request.POST["pyjama2"]
         pyjama3 = request.POST["pyjama3"]
         pyjama4 = request.POST["pyjama4"]
-
+        otp= request.POST["otp"]
         wb = Workbook()
         ws = wb.active
 
@@ -91,11 +107,13 @@ def form_view(request):
         ws.cell(row=24, column=1).value = "pyjama_ankle"
         ws.cell(row=24, column=2).value = pyjama4
         wb.save("check.xlsx")
-        
+
+
 
         user = client(
             name=username,
             mobile=mob,
+            email=mail,
             dress_type=dress,
             shoulder_to_shoulder=shoulder,
             above_bust=bust1,
@@ -115,7 +133,8 @@ def form_view(request):
             pyjama_length=pyjama3,
             pyjama_ankle=pyjama4,
         )
-        # user = client(shoulder_to_shoulder=shoulder, above_bust=bust1, top_bust=bust2 ,below_bust=bust3 , blouse_length=blouse , arm_hole=arm1, arm_width=arm2,  arm_length=arm3, waist=wst , saree_length=saree1, saree_waist=saree2, knee_to_knee=knee , thavani=thav, pyjama_waist=pyjama1, pyjama_hip=pyjama2, pyjama_length=pyjama3, pyjama_ankle=pyjama4)
+
+
         user.save()
      
         # jpype.startJVM() 

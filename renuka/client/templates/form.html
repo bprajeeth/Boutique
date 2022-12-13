@@ -142,6 +142,10 @@
                               <label for="mob" class="u-label">Mobile</label>
                               <input type="tel" placeholder="Enter mobile number" id="mob" name="mobile" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-14 u-white" required="">
                             </div>
+                            <div class="u-form-email u-form-group">
+                              <label for="email" class="u-label">Email Address</label>
+                              <input type="email" placeholder="Enter email" id="mob" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-14 u-white" required="">
+                            </div>                            
                             <div class="u-form-group u-form-message">
                               <label for="message-e0dd" class="u-label">Dress Type</label>
                               <input type="text" placeholder="Enter your message" rows="1" cols="50" id="message-e0dd" name="dress" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-14 u-white" required="">
@@ -252,20 +256,84 @@
           </div>
         </div>
       </div>
-  
+ 
+   
+      
       <div class="u-align-center u-form-group u-form-submit">
-        <a onclick="submitforms()" class="u-active-white u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-1 u-hover-black u-radius-24 u-btn-1">Submit</a>
+        <a onclick="openForm()" class="u-active-white u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-1 u-hover-black u-radius-24 u-btn-1">Submit</a>
         <!-- <input type="submit" value="submit" class="u-form-control-hidden"> -->
         <!-- <input id="submit_button" type="submit" class="u-form-control-hidden" onclick="submitforms()" /> -->
       </div>       
     </section>
+
+
+    <!-- <div id="myModal" class="modal">
+      
+      <div class="modal-content" id="modal-content">
+        <span class="close">&times;</span>
+        <img src="" alt="image was here" class="u-expanded-width u-image u-image-round u-radius-10 u-image-4" id="prod_img">
+        <p id="prod_desc"></p>
+      </div>
+    
+    </div>    -->
+    
+    <div id="myModal" class="modal">
+      <div class="modal-content" id="modal-content">
+      <span class="close">&times;</span>  
+      <div class="form-container">
+        <h1>Verify OTP</h1>
+        <p>An OTP has been sent to your e-mail address.Please enter that OTP in the box below.</p>
+    
+        <label for="otp"><b>Enter OTP</b></label>
+        <input type="tel" placeholder="Enter OTP" name="otp"  >
+        <button type="submit" class="btn" onclick="submitforms()">Verify OTP</button>
+        
+      </div>
+      </div>  
+    
+    </div>
   </form>
+
+
   <script>
+    var modal = document.getElementById("myModal");
+  
+    function openForm() {
+      modal.style.display = "block";
+    }
+    
+    // function closeForm() {
+    //   document.getElementById("myForm").style.display = "none";
+    // }
+    submitforms=function(){
+  
+    document.forms["form1"].submit();
+    window.alert("submitted !");
+    }
+    
+    var span = document.getElementsByClassName("close")[0];
+  
+  
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+  
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    
+  </script>
+
+  <!-- <script>
     submitforms=function(){
     document.forms["form1"].submit();
     window.alert("submitted !");
     }
-  </script>    
+  </script>     -->
     <!-- <script>
       submitforms=function(){
       document.forms["form1"].submit();
